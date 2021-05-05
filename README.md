@@ -30,6 +30,7 @@ COMMAND should be one of:
    magenta
    white
    black
+   orange
    rainbow
    brightness
    initialize_keyboard

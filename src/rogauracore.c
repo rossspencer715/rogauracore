@@ -216,6 +216,7 @@ const uint8_t CYAN[] = { 0x00, 0xff, 0xff };
 const uint8_t MAGENTA[] = { 0xff, 0x00, 0xff };
 const uint8_t WHITE[] = { 0xff, 0xff, 0xff };
 const uint8_t BLACK[] = { 0x00, 0x00, 0x00 };
+const uint8_t ORANGE[] = { 0xff, 0x56, 0x00 };
 
 void
 red(Arguments *args, Messages *messages) {
@@ -272,6 +273,12 @@ black(Arguments *args, Messages *messages) {
 }
 
 void
+orange(Arguments *args, Messages *messages) {
+    memcpy(args->colors, ORANGE, 3);
+    single_static(args, messages);
+}
+
+void
 rainbow(Arguments *args, Messages *messages) {
     memcpy(&(args->colors[0]), RED, 3);
     memcpy(&(args->colors[1]), YELLOW, 3);
@@ -303,6 +310,7 @@ const FunctionRecord FUNCTION_RECORDS[] = {
     {"magenta", &magenta, 0, 0},
     {"white", &white, 0, 0},
     {"black", &black, 0, 0},
+    {"orange", &orange, 0, 0},
     {"rainbow", &rainbow, 0, 0},
     {"brightness", &set_brightness, 0, 1, {BRIGHTNESS}},
     {"initialize_keyboard", &initialize_keyboard, 0, 0},
